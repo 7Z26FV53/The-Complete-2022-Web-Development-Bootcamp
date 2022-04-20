@@ -4,6 +4,9 @@ const bodyParser = require("body-parser");
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
+// https://www.w3schools.com/tags/ref_httpmethods.asp
+// http methods get vs post
+
 app.get("/", function(req, res) {
     //__dirname is the current file path(no matter where u r)
     res.sendFile(__dirname + "/index.html"); // send index.html to the usr
