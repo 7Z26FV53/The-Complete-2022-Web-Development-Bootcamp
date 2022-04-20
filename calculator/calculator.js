@@ -2,7 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: true})); // .urlencoded parse the html file
 
 // https://www.w3schools.com/tags/ref_httpmethods.asp
 // http methods get vs post
