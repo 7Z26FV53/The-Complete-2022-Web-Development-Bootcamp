@@ -6,7 +6,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req, res) {
     //__dirname is the current file path(no matter where u r)
-    res.sendFile(__dirname + "/index.html");
+    res.sendFile(__dirname + "/index.html"); // send index.html to the usr
 });
 
 // proces post requests
