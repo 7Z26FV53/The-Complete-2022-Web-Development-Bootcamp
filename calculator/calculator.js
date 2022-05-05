@@ -13,6 +13,7 @@ app.get("/", function(req, res) {
 });
 
 // proces post requests
+// body-parser is used here!!!
 app.post("/", function(req, res) {
     // console.log(req.body); // e.g. { num1: '1', num2: '1', submit: '' }
     var num1 = Number(req.body.num1);
