@@ -9,10 +9,11 @@ app.get("/", function(req, res) {
 
     res.sendFile(__dirname + "/index.html");
 
-    // cant include more than one res.send() in one app.get()/app.post()
+    // can't include more than one res.send() in one app.get()/app.post()
     // res.send(":D");
 });
 
+// !!! important !!!
 app.post("/", function(req, res) {
 
     // must include the prefix "https://"
