@@ -25,9 +25,18 @@ app.post("/", function(req, res) {
     // the approach to parse json
     https.get(url, function(response) {
         // console.log(response.statusCode);
+        
+        // the actual msg body we got back
+        // i.e. what openWeatherMap actually sent us
+        // ---------------------------------------
+        // call response.on() when receive some data
         response.on("data", function(data) {
-            const wData = JSON.parse(data);
+            // console.log(data); // it returns some hex codes!!!!!
+            // ----------------------------------------------------
+            // const wData = JSON.parse(data); ==> converse the hex code to readable form of json obj
             // console.log(wData);
+            
+            const wData = JSON.parse(data);
             // const obj = {
             //     name:"rein",
             //     age:21
