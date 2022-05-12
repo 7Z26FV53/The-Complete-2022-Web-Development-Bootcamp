@@ -13,7 +13,13 @@ app.get("/", function(req, res) {
     // res.send(":D");
 });
 
+
+
 // !!! important !!!
+// --------------------------------------------------
+// upon upload/submit data to server, it triggers app.post() as well as its callback function
+// inside the callback function, there is another function https.get(). it attempts to send the
+// data to a third-party server (see the url ?) and get something back (the weather description we want)
 app.post("/", function(req, res) {
 
     // must include the prefix "https://"
@@ -33,16 +39,19 @@ app.post("/", function(req, res) {
         response.on("data", function(data) {
             // console.log(data); // it returns some hex codes!!!!!
             // ----------------------------------------------------
-            // const wData = JSON.parse(data); ==> converse the hex code to readable form of json obj
+            // const wData = JSON.parse(data); ==> converse the hex code to readable form of json/js obj
             // console.log(wData);
-            
-            const wData = JSON.parse(data);
+            // ----------------------------------------------------
+            // convert js obj to json:
+            //
             // const obj = {
             //     name:"rein",
             //     age:21
             // }
             // console.log(JSON.stringify(obj));
-            const temp = wData.main.temp;
+            
+            const wData = JSON.parse(data);
+            const temp = wData.main.temp; // get this based on the structure of `wData` 
             console.log(temp);
             const desc = wData.weather[0].description;
             const icon = wData.weather[0].icon;
