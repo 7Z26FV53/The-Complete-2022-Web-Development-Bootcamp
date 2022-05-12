@@ -56,10 +56,12 @@ app.post("/", function(req, res) {
             const desc = wData.weather[0].description;
             const icon = wData.weather[0].icon;
             const imgURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            
+            // send multiple lines!!!!!!!!
             res.write("<h1>Temperature in " + query + ": " + temp + " degrees celsius</h1>");
             res.write("<p>Current weather: " + desc + ".<\p>");
             res.write("<img src=" + imgURL + ">");
-            res.send();
+            res.send(); // IMPORTANT: each app method can ONLY HAVE ONE res.send()!!!!!!!!!
         });
     });
 });
