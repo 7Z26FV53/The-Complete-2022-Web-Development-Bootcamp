@@ -48,7 +48,7 @@ app.post("/", function(req, res) {
             //     name:"rein",
             //     age:21
             // }
-            // console.log(JSON.stringify(obj));
+            // console.log(JSON.stringify(obj)); // pack the java obj to json form
             
             const wData = JSON.parse(data);
             const temp = wData.main.temp; // get this based on the structure of `wData` 
